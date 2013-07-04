@@ -1,0 +1,14 @@
+Source: tegra-t30-r16
+Section: non-free
+Priority: optional
+Maintainer: Tuomas Kulve <tuomas@kulve.fi>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.4
+
+Package: tegra-t30-r16
+Architecture: armhf
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tegra 3 EABI proprietary binaries
+  Provides NVIDIA Tegra 3 proprietary binaries including firmware,
+  OpenGL ES and GStreamer binaries.
+ 
