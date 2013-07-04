@@ -10,7 +10,7 @@ DEBIAN_XORG_ABI="12"
 
 if [ ! -f $FILE_T30_R16 ]
 then
-  echo "wget $BASE_URL/$FILE_T30_R16"
+  wget $BASE_URL/$FILE_T30_R16
 else
   echo "$FILE_T30_R16 found, not downloading."
 fi
