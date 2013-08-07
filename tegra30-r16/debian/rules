@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+#export DH_VERBOSE=1
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+	rm -rf debian/build
+
+build:
+
+install: 
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+
+	mkdir debian/build
+	cp -r nvidia-rootfs/* debian/build
+	cp -r overlay-rootfs/* debian/build
+
+binary: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs 
+	dh_install --sourcedir=debian/build -v
+	dh_installinit
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb

@@ -1,0 +1,15 @@
+tegra30-r16 (3-2) unstable; urgency=low
+
+  * Fixed init scripts.
+  * Added pkgconfig files.
+  * Added Khronos headers.
+  * Fixed linker configuration.
+  * Renamed package to tegra30-r16.
+
+ -- Tuomas Kulve <tuomas@kulve.fi>  Wed, 07 Aug 2013 16:28:23 +0000
+
+tegra30-r16 (3-1) unstable; urgency=low
+
+  * Initial version.
+
+ -- Tuomas Kulve <tuomas@kulve.fi>  Wed, 03 Jul 2013 18:06:24 +0300

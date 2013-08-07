@@ -1,0 +1,14 @@
+Source: tegra30-r16
+Section: non-free
+Priority: optional
+Maintainer: Tuomas Kulve <tuomas@kulve.fi>
+Build-Depends: debhelper (>=9), libasound2, libc6, libglib2.0-0, libgstreamer-plugins-base0.10-0, libgstreamer0.10-0, libpcre3, libx11-6, libxext6, libxv1, cdbs
+Standards-Version: 3.9.4
+
+Package: tegra30-r16
+Architecture: armhf
+Depends: libasound2, libc6, libglib2.0-0, libgstreamer-plugins-base0.10-0, libgstreamer0.10-0, libpcre3, libx11-6, libxext6, libxv1
+Description: Tegra 3 EABI proprietary binaries
+  Provides NVIDIA Tegra 3 proprietary binaries including firmware,
+  OpenGL ES and GStreamer binaries.
+ 

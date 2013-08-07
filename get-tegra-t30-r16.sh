@@ -3,7 +3,7 @@
 BASE_URL="http://developer.nvidia.com/sites/default/files/akamai/mobile/files/L4T"
 FILE_T30_R16="cardhu_Tegra-Linux-R16.3.0_armhf.tbz2"
 SHA1_T30_R16="3562703ca78e0fb7bdf877bb0d9353e4c82f6c97"
-DST="tegra-t30-r16/rootfs"
+DST="tegra30-r16/nvidia-rootfs"
 SRC="Linux_for_Tegra"
 TEGRA_LIBDIR="usr/lib/tegra30"
 DEBIAN_XORG_ABI="12"
@@ -28,9 +28,7 @@ mkdir -p $DST
 
 tar jxf $SRC/nv_tegra/nvidia_drivers.tbz2 -C $DST
 
-tar jxf $SRC/nv_tegra/config.tbz2 -C $DST --exclude=etc/wpa_supplicant.conf
-mkdir -p $DST/etc/X11/xorg.conf.d
-mv $DST/etc/X11/xorg.conf $DST/etc/X11/xorg.conf.d/tegra3.conf
+tar jxf $SRC/nv_tegra/config.tbz2 -C $DST --exclude=etc/wpa_supplicant.conf --exclude=etc/init --exclude=etc/X11
 
 tar jxf $SRC/nv_tegra/nv_sample_apps/nvgstapps.tbz2 -C $DST
 

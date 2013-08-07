@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib/tegra30
+includedir=${prefix}/include
+
+Name: GLESv2
+Description: Tegra GLESv2 library
+Version: 1
+Libs: -L${libdir} -lGLESv2
+Cflags: -I${includedir}
+

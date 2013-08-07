@@ -1,0 +1,56 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:       tegra3
+# Required-Start: udev $local_fs
+# Required-Stop:
+# Default-Start:  2 3 4 5
+# Default-Stop:   0 1 6
+# Short-Description: Tegra3 configuration
+### END INIT INFO
+
+start() {
+    echo "Setting  /sys/power/state access rights"
+    if [ -e /sys/power/state ]; then
+        chmod 0664 /sys/power/state
+    fi
+
+    echo "Enabling cpu auto hot plug"
+    echo 1 > /sys/module/cpu_tegra3/parameters/auto_hotplug
+
+    # Seems to be buggy currently (7 Aug 2013)
+    #echo "Enabling lp2 idle state"
+    #echo "Y" > /sys/module/cpuidle/parameters/lp2_in_idle
+
+    echo "Setting mmc read ahead size"
+    if [ -e /sys/block/mmcblk0/queue/read_ahead_kb ]; then
+        echo 2048 > /sys/block/mmcblk0/queue/read_ahead_kb
+    fi
+    if [ -e /sys/block/mmcblk1/queue/read_ahead_kb ]; then
+        echo 2048 > /sys/block/mmcblk1/queue/read_ahead_kb
+    fi
+}
+
+
+stop() {
+    # Seems to be buggy currently (7 Aug 2013)
+    #echo "Disabling lp2 idle state"
+    #echo "N" > /sys/module/cpuidle/parameters/lp2_in_idle
+
+    echo "Disabling cpu auto hot plug"
+    echo 0 > /sys/module/cpu_tegra3/parameters/auto_hotplug
+}
+
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+esac
+
+exit 0
