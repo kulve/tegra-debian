@@ -25,6 +25,7 @@ binary: install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs 
+	dh_installdocs
 	dh_install --sourcedir=debian/build -v
 	dh_installinit
 	dh_link
