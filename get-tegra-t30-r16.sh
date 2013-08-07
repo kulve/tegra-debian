@@ -15,6 +15,8 @@ else
   echo "$FILE_T30_R16 found, not downloading."
 fi
 
+echo "$SHA1_T30_R16  $FILE_T30_R16" > $FILE_T30_R16.sha1sum 
+
 if ! sha1sum -c $FILE_T30_R16.sha1sum
 then
   echo "ERROR: sha1sum mismatch"
