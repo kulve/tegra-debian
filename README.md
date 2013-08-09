@@ -136,5 +136,6 @@ Stick the USB stick to Ouya, turn on the TV (or monitor), select proper input an
 
 ### Boot Ouya with the kernel: ###
 *WARNING: NEVER EVER FLASH THE KERNEL, JUST BOOT FROM RAM*
+
     fastboot boot zImage-3.1.10-tk1+
 
