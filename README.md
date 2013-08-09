@@ -29,6 +29,7 @@ Use `mkswap` and `mkfs.ext4` to initialise the partitions. If your system is pro
 Change the sdX2 below to match your setup.
 
     export $TARGET=/mnt/rootfs
+    sudo mkdir -p $TARGET
     sudo mount /dev/sdX2 $TARGET
 
 ### Extract base system packages to the USB stick: ###
