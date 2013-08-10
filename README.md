@@ -13,18 +13,6 @@ Known issues
 * Low-power core doesn't work (kernel crash)
 * HDMI must be connected always and the monitor/TV must be on always
 * Audio plays at wrong rate
-
-    cat <<END > /home/ouya/.asoundrc
-    pcm.!default {
-    type hw
-    card 1
-    }
-    
-    ctl.!default {
-    type hw
-    card 1
-    }
-    END
 * Only 1920x1080 supported
 
 
@@ -121,6 +109,21 @@ FIXME: how to enable swap correctly in Debian nowadays?
     adduser ouya video
     adduser ouya audio
     adduser ouya plugdev
+
+
+### Select appropriate ALSA sound card: ###
+
+    cat <<END > /home/ouya/.asoundrc
+    pcm.!default {
+    type hw
+    card 1
+    }
+    
+    ctl.!default {
+    type hw
+    card 1
+    }
+    END
 
 ### Install XFCE and Slim login manager: ###
     apt-get install xfce4 xfce4-goodies exaile exaile-plugin-contextinfo midori slim
