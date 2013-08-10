@@ -13,6 +13,7 @@ Known issues
 * Low-power core doesn't work (kernel crash)
 * HDMI must be connected always and the monitor/TV must be on always
 * Audio plays at wrong rate
+
     cat <<END > /home/ouya/.asoundrc
     pcm.!default {
     type hw
