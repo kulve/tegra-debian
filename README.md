@@ -12,6 +12,7 @@ Known issues
 * Not properly tested, so there are a bunch unknown issues
 * Low-power core doesn't work (kernel crash)
 * HDMI must be connected always and the monitor/TV must be on always
+* Audio doesn't work
 * Only 1920x1080 supported
 
 
