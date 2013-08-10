@@ -9,10 +9,11 @@ That said, the goal is not to flash anything on Ouya. Kernel is booted from memo
 
 Known issues
 ------------
-* Not properly tested, so there are a bunch unknown issues
+* Not properly tested, so there is a bunch unknown issues
 * Low-power core doesn't work (kernel crash)
 * HDMI must be connected always and the monitor/TV must be on always
 * Audio plays at wrong rate
+* Gstreamer usually assumes xvimagesink as the video sink, but nvxvimagesink must be used
 * Only 1920x1080 supported
 
 
