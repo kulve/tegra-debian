@@ -12,7 +12,18 @@ Known issues
 * Not properly tested, so there are a bunch unknown issues
 * Low-power core doesn't work (kernel crash)
 * HDMI must be connected always and the monitor/TV must be on always
-* Audio doesn't work
+* Audio plays at wrong rate
+    cat <<END > /home/ouya/.asoundrc
+    pcm.!default {
+    type hw
+    card 1
+    }
+    
+    ctl.!default {
+    type hw
+    card 1
+    }
+    END
 * Only 1920x1080 supported
 
 
