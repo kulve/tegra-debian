@@ -30,7 +30,7 @@ Use `mkswap` and `mkfs.ext4` to initialise the partitions. If your system is pro
 
 Change the sdX2 below to match your setup.
 
-    export $TARGET=/mnt/rootfs
+    export TARGET=/mnt/rootfs
     sudo mkdir -p $TARGET
     sudo mount /dev/sdX2 $TARGET
 
@@ -117,10 +117,10 @@ FIXME: how to enable swap correctly in Debian nowadays?
 Add "vt1" to `xserver_arguments` in `/etc/slim.conf` ###
 
 ### Install Tegra 3 proprietary binaries, configs, headers and pkgconfig files: ###
-    dpkg -i tegra30-r16_3-2_armhf.deb
+    dpkg -i tegra30-r16_3-*_armhf.deb
 
 ### Extract kernel modules: ###
-    tar zxf modules-3.1.10-tk1+.tar.gz
+    tar zxf modules-3.1.10-tk*.tar.gz -C $TARGET/lib/modules/
 
 ### Finish up with the chroot: ###
 
