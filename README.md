@@ -96,6 +96,7 @@ FIXME: how to enable swap correctly in Debian nowadays?
     # <file system> <mount point>   <type>  <options>       <dump>  <pass>
     /dev/root      /               ext4    noatime,errors=remount-ro 0 1
     tmpfs          /tmp            tmpfs   defaults          0       0
+    /dev/sda1      none            swap    sw                0       0
     END
 
 ### Activate remote console and disable some local consoles: ###
