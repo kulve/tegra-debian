@@ -11,10 +11,10 @@ Known issues
 ------------
 * Not properly tested, so there is a bunch unknown issues
 * Low-power core doesn't work (kernel crash)
-* HDMI must be connected always and the monitor/TV must be on always
-* Audio plays at wrong rate
+** CPUfreq with ondemand governer works though.
+* Audio plays at wrong rate and only at left speaker
 * Gstreamer usually assumes xvimagesink as the video sink, but nvxvimagesink must be used
-* Only 1920x1080 supported
+** Totem obeys gconf: gconftool-2  -s /system/gstreamer/0.10/default/videosink nvxvimagesink --type=string
 
 
 Setting up the rootfs
@@ -113,7 +113,7 @@ FIXME: how to enable swap correctly in Debian nowadays?
     adduser ouya plugdev
 
 ### Install XFCE and Slim login manager: ###
-    apt-get install xfce4 xfce4-goodies exaile exaile-plugin-contextinfo midori slim
+    apt-get install xfce4 xfce4-goodies totem midori slim
 
 Add "vt1" to `xserver_arguments` in `/etc/slim.conf` ###
 
@@ -133,13 +133,11 @@ Log out from the chroot, kill any process started in the chroot (`lsof $TARGET`)
 Booting Ouya
 ------------
 
-Stick the USB stick to Ouya, turn on the TV (or monitor), select proper input and never turn it off again.
-
 ### Reboot Ouya to fastboot: ###
     adb reboot-bootloader
 
 ### Boot Ouya with the kernel: ###
 *WARNING: NEVER EVER FLASH THE KERNEL, JUST BOOT FROM RAM*
 
-    fastboot boot zImage-3.1.10-tk1+
+    fastboot boot zImage-3.1.10-tk*
 
