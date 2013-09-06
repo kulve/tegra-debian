@@ -1,3 +1,15 @@
+tegra30-r16 (3-3.1) unstable; urgency=low
+
+  * Use HDMI only X.Org config.
+
+ --  <tuomas@kulve.fi>  Fri, 06 Sep 2013 03:56:36 +0000
+
+tegra30-r16 (3-3) unstable; urgency=low
+
+  * Removed (broken) init script.
+
+ -- Tuomas Kulve <tuomas@kulve.fi>  Sun, 18 Aug 2013 16:09:27 +0000
+
 tegra30-r16 (3-2) unstable; urgency=low
 
   * Fixed init scripts.
