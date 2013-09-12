@@ -11,11 +11,10 @@ Known issues
 ------------
 * Not properly tested, so there is a bunch unknown issues
 * Low-power core doesn't work (kernel crash)
-** CPUfreq with ondemand governer works though.
-* Audio plays at wrong rate and only at left speaker
+    * CPUfreq with ondemand governer works though.
 * Gstreamer usually assumes xvimagesink as the video sink, but nvxvimagesink must be used
-** Totem obeys gconf: gconftool-2  -s /system/gstreamer/0.10/default/videosink nvxvimagesink --type=string
-
+    * Totem obeys gconf: gconftool-2  -s /system/gstreamer/0.10/default/videosink nvxvimagesink --type=string
+* Wifi firmware binaries not included, they need to be copied from the Android rootfs (/dev/mmcblk0p3 after booting to Debian)
 
 Setting up the rootfs
 ---------------------
@@ -88,7 +87,6 @@ Choose `en_US.UTF-8` for both prompts, or whatever you want.
     echo ouya > /etc/hostname
 
 ### Create filesystem mounts: ###
-FIXME: how to enable swap correctly in Debian nowadays?
 
     cat <<END > /etc/fstab
     # /etc/fstab: static file system information.
@@ -115,7 +113,7 @@ FIXME: how to enable swap correctly in Debian nowadays?
 ### Install XFCE and Slim login manager: ###
     apt-get install xfce4 xfce4-goodies totem midori slim
 
-Add "vt1" to `xserver_arguments` in `/etc/slim.conf` ###
+Add "vt1" to `xserver_arguments` in `/etc/slim.conf`
 
 ### Install Tegra 3 proprietary binaries, configs, headers and pkgconfig files: ###
     dpkg -i tegra30-r16_3-*_armhf.deb
