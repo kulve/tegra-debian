@@ -1,3 +1,10 @@
+tegra30-r16 (3-3.2) unstable; urgency=low
+
+  * Added ALSA conf
+  * Make sure Tegra OpenGL ES libs are used instead of Mesa
+
+ --  <tuomas@kulve.fi>  Wed, 11 Sep 2013 13:06:43 +0000
+
 tegra30-r16 (3-3.1) unstable; urgency=low
 
   * Use HDMI only X.Org config.
