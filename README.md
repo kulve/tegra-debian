@@ -9,12 +9,12 @@ That said, the goal is not to flash anything on Ouya. Kernel is booted from memo
 
 Known issues
 ------------
-* Not properly tested, so there is a bunch unknown issues
+* Not properly tested, so there is a bunch unknown issues.
 * Low-power core doesn't work (kernel crash)
     * CPUfreq with ondemand governer works though.
-* Gstreamer usually assumes xvimagesink as the video sink, but nvxvimagesink must be used
+* Gstreamer usually assumes xvimagesink as the video sink, but nvxvimagesink must be used.
     * Totem obeys gconf: gconftool-2  -s /system/gstreamer/0.10/default/videosink nvxvimagesink --type=string
-* Wifi firmware binaries not included, they need to be copied from the Android rootfs (/dev/mmcblk0p3 after booting to Debian)
+* Wifi firmware binaries not included, they need to be copied from the Android rootfs.
 
 Setting up the rootfs
 ---------------------
@@ -138,4 +138,18 @@ Booting Ouya
 *WARNING: NEVER EVER FLASH THE KERNEL, JUST BOOT FROM RAM*
 
     fastboot boot zImage-3.1.10-tk*
+
+Wifi
+----
+
+The BCM firmware binaries may not be redistributable so they need to be copied from the Android rootfs after booting to Debian:
+
+    mount -o ro /dev/mmcblk0p3 /mnt/
+    mkdir /lib/firmware/bcm4330/
+    cp /mnt/etc/firmware/nvram_4330.txt /lib/firmware/
+    cp /mnt/vendor/firmware/bcm4330/fw_bcmdhd.bin /lib/firmware/bcm4330/
+    # Not sure where BT firmware should be in
+    cp /mnt/etc/firmware/bcm4330.hcd /lib/firmware/
+    cp /mnt/etc/firmware/bcm4330.hcd /lib/firmware/bcm4330/
+    umount /mnt
 
