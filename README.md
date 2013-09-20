@@ -118,12 +118,12 @@ Add "vt1" to `xserver_arguments` in `/etc/slim.conf`
 ### Install Tegra 3 proprietary binaries, configs, headers and pkgconfig files: ###
     dpkg -i tegra30-r16_3-*_armhf.deb
 
-### Extract kernel modules: ###
-    tar zxf modules-3.1.10-tk*.tar.gz -C $TARGET/lib/modules/
-
 ### Finish up with the chroot: ###
 
 Log out from the chroot, kill any process started in the chroot (`lsof $TARGET`) and `sudo umount $TARGET`.
+
+### Extract kernel modules: ###
+    tar zxf modules-3.1.10-tk*.tar.gz -C $TARGET/lib/modules/
 
 ### Install adb and fastboot to the host Debian: ###
     sudo dpkg -i android-tools*deb
