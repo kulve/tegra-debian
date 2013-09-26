@@ -120,10 +120,11 @@ Add "vt1" to `xserver_arguments` in `/etc/slim.conf`
 
 ### Finish up with the chroot: ###
 
-Log out from the chroot, kill any process started in the chroot (`lsof $TARGET`) and `sudo umount $TARGET`.
+Log out from the chroot and extract kernel modules to the target:
+    sudo tar zxf modules-3.1.10-tk*.tar.gz -C $TARGET/lib/modules/
 
-### Extract kernel modules: ###
-    tar zxf modules-3.1.10-tk*.tar.gz -C $TARGET/lib/modules/
+Kill any process started in the chroot (`lsof $TARGET`) and finally unmount the target:
+    sudo umount $TARGET
 
 ### Install adb and fastboot to the host Debian: ###
     sudo dpkg -i android-tools*deb
