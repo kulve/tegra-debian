@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib/tegra30
+includedir=${prefix}/include
+
+Name: OMXIL
+Description: Tegra OMX IL library
+Version: 1
+Libs: -L${libdir} -lnvomx -lnvomxilclient
+Cflags: -I${includedir}/OMXIL
+
