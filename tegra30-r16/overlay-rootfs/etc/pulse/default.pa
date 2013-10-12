@@ -1,0 +1,2 @@
+load-module module-alsa-sink device=hw:0,3
+set-default-sink 0
